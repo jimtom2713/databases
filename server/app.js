@@ -1,5 +1,10 @@
+//Server
+// var request_handler = require('./request-handler');
+var utils = require('./utils');
+
 var express = require('express');
 var db = require('./db');
+var dbConnection = require('./db/index.js');
 
 // Middleware
 var morgan = require('morgan');
@@ -29,4 +34,3 @@ if (!module.parent) {
   app.listen(app.get("port"));
   console.log("Listening on", app.get("port"));
 }
-
