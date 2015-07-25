@@ -11,11 +11,11 @@ CREATE TABLE messages (
   PRIMARY KEY (objectId)
 );
 
--- CREATE TABLE users (
---   id int NOT NULL AUTO_INCREMENT,
---   user varchar(30),
---   PRIMARY KEY (id)
--- );
+CREATE TABLE users (
+  objectId int NOT NULL AUTO_INCREMENT,
+  username varchar(30),
+  PRIMARY KEY (objectId)
+);
 
 -- CREATE TABLE rooms (
 --   id int NOT NULL AUTO_INCREMENT,

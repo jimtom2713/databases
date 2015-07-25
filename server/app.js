@@ -1,10 +1,6 @@
-//Server
-// var request_handler = require('./request-handler');
-var utils = require('./utils');
-
 var express = require('express');
-var db = require('./db');
-var dbConnection = require('./db/index.js');
+// var db = require('./db');
+var db = require('../orm-resources/chatterbox-orm');
 
 // Middleware
 var morgan = require('morgan');
