@@ -63,7 +63,6 @@ $(function() {
         contentType: 'application/json',
         data: { order: '-createdAt'},
         success: function(data) {
-          console.log(data);
           data = JSON.parse(data);
           console.log('chatterbox: Messages fetched');
 
@@ -71,7 +70,8 @@ $(function() {
           if (!data.results || !data.results.length) { return; }
 
           // Get the last message
-          var mostRecentMessage = data.results[data.results.length-1];
+          // var mostRecentMessage = data.results[data.results.length-1];
+          var mostRecentMessage = data.results[0];
           var displayedRoom = $('.chat span').first().data('roomname');
           // app.stopSpinner();
           // Only bother updating the DOM if we have a new message

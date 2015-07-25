@@ -1,19 +1,23 @@
 var db = require('../db');
 
 
-
+// SELECT * FROM table ORDER BY timestamp DESC
 
 module.exports = {
   messages: {
     get: function (callback) {
-      var queryString = 'SELECT * from messages';
+      var queryString = 'SELECT * from messages ORDER BY time DESC';
       db.dbConnection.query(queryString, function(err, rows){
-        // console.log(rows);
         callback(rows);
       })
     }, // a function which produces all the messages
-    post: function () {} // a function which can be used to insert a message into the database
+    post: function (message, callback) {
+      var queryString = 'INSERT into messages (text, username, roomname) values ("' + message.text.toString() +'","'+message.username+'","'+message.roomname+'")';
+      db.dbConnection.query(queryString);
+      callback();//????? somehow back to fetch client?
+    } // a function which can be used to insert a message into the database
   },
+
 
   users: {
     // Ditto as above.
